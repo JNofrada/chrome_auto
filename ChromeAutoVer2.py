@@ -8,14 +8,14 @@ import socket
 HOST = '127.0.0.42'
 PORT = 65432
 
-s = socket.socket(AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen(5)
 
 while True:
     clientsocket, address = s.accept()
     print( f'Connection from {address} has been established')
-    clientsocket.send(bytes("Welcome to the server", ""))
+    clientsocket.send(bytes("Welcome to the server", "utf-8"))
 
 
 
