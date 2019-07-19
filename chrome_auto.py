@@ -1,11 +1,14 @@
 import webbrowser
 import socket
 
-HOST = '127.0.0.42'
-PORT = 65432
+HOST = '172.20.1.232'
+PORT = 5000
+CONNECTED = True
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print ("Attempting to connect")
 s.connect((HOST, PORT))
+s.send(bytes("Hello Server", "utf-8"))
 
 msg = s.recv(1024)
 print(msg.decode("utf-8"))
