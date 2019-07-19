@@ -3,7 +3,7 @@ import socket
 
 HOST = '172.20.1.232'
 PORT = 5000
-CONNECTED = True
+
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print ("Attempting to connect")
